@@ -81,23 +81,9 @@
 
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 
-  /* 큐 하나가 화면 여럿(폐회의 6종)을 가질 수 있어 1:1 대응이 깨진다.
-     스토리보드와 같은 방식으로 평탄화하고 큐 → 첫 항목 인덱스를 따로 든다. */
-  var lbItems = [], lbFirst = {};
-  CUES.forEach(function (c, i) {
-    lbFirst[i] = lbItems.length;
-    var spec = (c.sig && c.sig !== '—') ? c.sig : '';
-    if (c.pick) {
-      c.pick.forEach(function (b) {
-        lbItems.push({ k: 'i', s: 'assets/poster/' + b.v + '.webp',
-                       t: 'CUE ' + c.n + ' · ' + c.title, m: b.t, spec: spec });
-      });
-    } else {
-      lbItems.push({ k: 'i', s: c.img, t: 'CUE ' + c.n + ' · ' + c.title, m: c.screen, spec: spec });
-    }
-  });
-  window.GALLERY = window.GALLERY || {};
-  window.GALLERY.cue = { fit: 'cover', items: lbItems };
+  /* 확대(라이트박스)는 걸지 않는다 — 이 장에서 보여줄 것은 「큐마다 지정된 화면이
+     붙어 있다」이고, 화면을 크게 볼 일은 없다. 발표 중 오클릭으로 확대가 열리면
+     콘솔 조작 흐름만 끊긴다. */
 
   var listEl   = root.querySelector('.cue-list');
   var stillEl  = root.querySelector('.cue-still');
@@ -144,7 +130,6 @@
       var b = c.pick[n];
       btns.forEach(function (o, m) { o.classList.toggle('is-on', m === n); });
       stillEl.src = 'assets/poster/' + b.v + '.webp';
-      if (screenEl) screenEl.setAttribute('data-index', String(lbFirst[idx] + n));
     }
     btns.forEach(function (o) {
       o.addEventListener('click', function (e) {
@@ -175,7 +160,6 @@
         stillEl.onerror = function () { stillEl.style.display = 'none'; pendEl.style.display = ''; };
         stillEl.onload  = function () { pendEl.style.display = 'none'; stillEl.style.display = ''; };
       }
-      if (screenEl) screenEl.setAttribute('data-index', String(lbFirst[idx]));
     }
 
     if (mentEl) mentEl.textContent = c.ment || '';

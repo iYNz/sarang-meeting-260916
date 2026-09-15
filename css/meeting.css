@@ -264,3 +264,8 @@
   color: rgba(255,255,255,.62); margin: 0;
 }
 .yg-end b { color: #fff; font-weight: var(--fw-semibold); }
+
+/* 05p — 확대를 걸지 않으므로 누를 수 있다는 신호도 지운다.
+   커서와 호버 테두리가 남아 있으면 눌러 보게 되고, 아무 일도 일어나지 않는다. */
+#cue .cue-screen { cursor: default; }
+#cue .cue-screen:hover { border-color: var(--card-line); box-shadow: none; }

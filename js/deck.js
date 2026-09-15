@@ -25,6 +25,7 @@
     ev: '안건 1 · 나눔이벤트',
     cue: '안건 2 · 큐 관리 시스템',
     ask: '총정리',
+    'logo-end': '마무리',
   };
   function sectionFor(slide) { return SECTION[slide.id] || ''; }
 
