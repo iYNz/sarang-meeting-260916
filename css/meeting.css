@@ -140,15 +140,17 @@
   background: #0d0d0f; border: 1px solid rgba(255,255,255,.09);
 }
 .mt-step__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-/* 3차는 아직 그림이 없다 — 비어 있다는 것 자체가 오늘의 요청이다 */
-.mt-step__img--q {
-  display: flex; align-items: center; justify-content: center;
-  border-style: dashed; border-color: rgba(224,49,49,.55); background: rgba(224,49,49,.06);
-}
+/* 3차는 컨셉 참고 이미지 위에 물음표를 얹는다. 참고 이미지가 밝은 회색이라 그대로
+   깔면 어두운 앞 두 장 사이에서 이 한 장만 튄다 — 눌러서 톤을 맞추고, 물음표가
+   읽힐 바탕을 만든다. 점선 테두리는 「아직 확정 아님」을 계속 말한다. */
+.mt-step__img--q { border-style: dashed; border-color: rgba(224,49,49,.55); }
+.mt-step__img--q img { filter: brightness(.34) saturate(.4) contrast(1.06); }
 .mt-step__img--q i {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
   font-style: normal; font-family: var(--font-num);
   font-size: 58px; font-weight: 800; line-height: 1;
-  color: rgba(255,107,107,.62);
+  color: rgba(255,107,107,.92); text-shadow: 0 4px 26px rgba(0,0,0,.85);
 }
 
 /* (사용 안 함) 현재 가안 네 컷 — 카드 썸네일로 대체했다 */
