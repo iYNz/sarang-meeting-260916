@@ -196,9 +196,23 @@
 
 /* ---- 06p · 총정리 질문 ----
    마지막 장은 질문만 남긴다. 번호와 질문은 또렷하게, 보조 설명은 한 단계 눌러
-   훑을 때 질문만 먼저 들어오게 한다. */
-.mt-qlay { display: grid; grid-template-columns: 1.25fr 1fr; gap: 24px; align-items: stretch; }
+   훑을 때 질문만 먼저 들어오게 한다.
+   질문은 안건마다 둘씩이다 — 나머지는 기획안이 와야 물을 수 있는 것들이라,
+   여기 얹으면 오늘 답할 수 없는 항목이 답해야 할 항목과 같은 무게로 보인다.
+   두 칸이 같은 개수가 되었으므로 폭도 반씩 나눈다. */
+.mt-qlay { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
 .mt-qcol { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+/* 안건마다 썸네일 한 장. 왼쪽은 무엇을 만드는지(도미노), 오른쪽은 무엇을 정하는지
+   (큐 콘솔)를 바로 가리킨다 — 마지막 장만 떼어 봐도 두 안건이 무엇이었는지 붙는다.
+   도미노 참고 이미지는 밝은 회색이라 그대로 두면 어두운 콘솔 캡처와 한 쌍으로
+   읽히지 않는다. 눌러서 톤을 맞춘다. */
+.mt-qthumb {
+  display: block; position: relative; aspect-ratio: 12 / 5;
+  border-radius: 10px; overflow: hidden;
+  background: #0d0d0f; border: 1px solid rgba(255,255,255,.09);
+}
+.mt-qthumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.mt-qthumb--dim img { filter: brightness(.42) saturate(.4) contrast(1.06); }
 .mt-qcol__k {
   align-self: flex-start; padding: 4px 12px; border-radius: 999px;
   font-size: 12px; font-weight: var(--fw-bold); letter-spacing: .02em;
