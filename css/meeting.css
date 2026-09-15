@@ -58,35 +58,6 @@
 .mt-flag--warn { color: rgba(255,255,255,.88); background: rgba(224,49,49,.07); border: 1px solid rgba(224,49,49,.45); }
 .mt-flag--warn b { color: var(--warn-lit); }
 
-/* ---------- 시나리오 ↔ 큐 대조표 ----------
-   「우리가 임의로 만든 것이 아니다」를 문장이 아니라 표로 보여준다.
-   왼쪽에 귀사 문서의 구간, 오른쪽에 그것을 받은 큐 번호를 둔다. */
-.mt-lay { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: start; min-height: 0; }
-.mt-tbl { width: 100%; border-collapse: collapse; }
-.mt-tbl th, .mt-tbl td {
-  text-align: left; padding: 13px 14px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.mt-tbl th {
-  font-size: 12.5px; font-weight: var(--fw-bold); letter-spacing: .06em;
-  color: rgba(255,255,255,.45); border-bottom-color: rgba(255,255,255,.2);
-}
-.mt-tbl td { font-size: 17px; color: rgba(255,255,255,.86); line-height: 1.45; }
-.mt-tbl td b { color: #fff; font-weight: var(--fw-semibold); }
-.mt-tbl .cue {
-  font-family: var(--font-num); font-size: 14.5px; font-weight: 800;
-  letter-spacing: .04em; color: #fff; white-space: nowrap;
-}
-.mt-tbl .sig { font-size: 13.5px; color: rgba(255,255,255,.42); }
-/* 의뢰가 필요한 줄 — 두 구간을 하나로 묶었거나 조건부인 곳 */
-.mt-tbl tr.is-ask td { background: rgba(224,49,49,.1); }
-.mt-tbl tr.is-ask .cue { color: var(--warn-lit); }
-.mt-ask {
-  display: inline-block; margin-left: 7px; padding: 1px 7px; border-radius: 999px;
-  font-size: 10.5px; font-weight: var(--fw-bold);
-  color: var(--warn-lit); border: 1px solid rgba(224,49,49,.75);
-}
-
 /* ---------- 결정 항목 ---------- */
 .mt-items { display: flex; flex-direction: column; gap: 11px; }
 .mt-item {
@@ -187,8 +158,11 @@
 .mt-pair .mt-alt { padding: 18px 22px; }
 .mt-pair .mt-alt__t { font-size: 15.5px; line-height: 1.58; }
 
-/* 03p 두 카드는 불릿이 셋이라 02p 세 카드보다 여백이 빡빡하다 */
-#agenda .mt-card .list li { padding: 9px 0 9px 26px; }
+/* 03p 두 카드는 불릿이 셋이라 02p 세 카드보다 여백이 빡빡하다.
+   ▸ 마커도 뺀다 — 세 줄은 목록이 아니라 한 안건을 설명하는 문단들이라,
+   마커가 붙으면 항목을 세어 가며 읽게 된다. */
+#agenda .mt-card .list li { padding: 9px 0; }
+#agenda .mt-card .list li::before { content: none; }
 /* 02p — 세 카드 + 결론 박스 두 덩어리 */
 #yagni .doc-body { gap: 22px; }
 #yagni .mt-card .list li { font-size: 16px; line-height: 1.6; padding: 9px 0 9px 24px; }
@@ -212,15 +186,13 @@
 /* ---- 05p · 콘솔 + 대조표 ----
    콘솔은 좌 목록 / 우 스테이지 구조라 폭이 줄면 목업이 먼저 작아진다.
    그래서 콘솔에 폭을 더 주고 표는 신호 열을 덜어 좁게 쓴다. */
+/* 옆에 시나리오 대조표를 뒀다가 뺐다. 콘솔을 넘겨 보면 큐마다 화면 · 멘트 · 신호가
+   붙어 있다는 것이 이미 보이고, 표는 같은 말을 한 번 더 하면서 콘솔만 좁혔다.
+   이제 콘솔이 본문 폭을 다 쓴다 — 목업이 커지는 만큼 설득력이 커진다. */
 .mt-cuelay {
-  display: grid; grid-template-columns: 1.62fr 1fr; grid-template-rows: minmax(0, 1fr);
-  gap: 24px; align-items: stretch; min-height: 0;
+  display: grid; grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr);
+  min-height: 0;
 }
-.mt-side { display: flex; flex-direction: column; gap: 14px; min-width: 0; min-height: 0; }
-.mt-side .mt-tbl td { font-size: 15px; }
-.mt-side .mt-tbl th, .mt-side .mt-tbl td { padding: 10px 12px; }
-.mt-side .mt-alt { margin-top: auto; padding: 16px 18px; }
-.mt-side .mt-alt__t { font-size: 15px; line-height: 1.55; }
 
 /* ---- 06p · 총정리 질문 ----
    마지막 장은 질문만 남긴다. 번호와 질문은 또렷하게, 보조 설명은 한 단계 눌러
