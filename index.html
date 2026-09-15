@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>사랑의열매 × airpass 실무 협의 · 2026.09.16 — 구축에 앞서 확정해야 할 것들</title>
   <meta name="description" content="희망2027나눔캠페인 성금 전달식 · 인터랙티브 미디어 월 구축 — 나눔이벤트 도미노 연출 확정, 큐 관리 시스템 기능 의뢰" />
+
+  <!-- 링크 공유 카드.
+       og:image 를 두지 않으면 크롤러가 문서에서 이미지를 아무거나 골라 쓴다 — 표지에
+       제일 먼저 나오는 사랑의열매 로고가 잡혀서, 우리가 보낸 자료인데 발신자가 상대
+       기관으로 보였다. 마무리 장(07p)의 airpass 로고 화면을 1200×630 으로 잘라 못박는다.
+       og:image 는 절대 경로여야 한다. 카카오톡 등 일부 크롤러는 상대 경로를 풀지 않는다.
+       파일은 PNG 다 — 07p 원본은 webp 인데, webp 를 읽지 못하는 크롤러가 아직 있다. -->
+  <link rel="icon" type="image/png" href="assets/og/icon.png" />
+  <link rel="apple-touch-icon" href="assets/og/icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="airpass" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:url" content="https://sarang-meeting-260916.netlify.app/" />
+  <meta property="og:title" content="사랑의열매 × airpass 실무 협의 · 2026.09.16" />
+  <meta property="og:description" content="구축에 앞서 확정해야 할 것들 — 나눔이벤트 도미노 연출, 큐 관리 시스템 기능 의뢰" />
+  <meta property="og:image" content="https://sarang-meeting-260916.netlify.app/assets/og/cover.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="airpass" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="사랑의열매 × airpass 실무 협의 · 2026.09.16" />
+  <meta name="twitter:description" content="구축에 앞서 확정해야 할 것들 — 나눔이벤트 도미노 연출, 큐 관리 시스템 기능 의뢰" />
+  <meta name="twitter:image" content="https://sarang-meeting-260916.netlify.app/assets/og/cover.png" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
