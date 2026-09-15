@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사랑의열매 × airpass 실무 협의 · 2026.09.16 — 확정이 필요한 두 가지</title>
+  <meta name="description" content="희망2027나눔캠페인 성금 전달식 · 인터랙티브 미디어 월 구축 — 나눔이벤트 도미노 연출 확정, 큐 관리 시스템 기능 의뢰" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/slides.css" />
+  <link rel="stylesheet" href="css/proposal.css" />
+  <link rel="stylesheet" href="css/storyboard.css" />
+  <link rel="stylesheet" href="css/meeting.css" />
+</head>
+<body>
+  <div id="boot"></div>
+  <div id="stage">
+
+    <div class="stage-bg" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--2"></span>
+      <span class="orb orb--3"></span>
+      <span class="orb orb--4"></span>
+    </div>
+
+    <!-- 01 · 표지 -->
+    <section class="slide slide--center" id="cover">
+      <div class="cover-bg" aria-hidden="true">
+        <span class="orb orb--1"></span>
+        <span class="orb orb--2"></span>
+      </div>
+      <div class="cover-glass" data-rise>
+        <div class="cover-hero">
+          <div class="cover-accent"></div>
+          <h1 class="cover-hero__title" data-rise="2">
+            <span class="lead-line">2026. 09. 16 (수) · 실무 협의</span>
+            구축 착수 전 <span class="hl">확정이 필요한 두 가지</span>
+            <span class="sub-line">희망2027나눔캠페인 성금 전달식 · 인터랙티브 미디어 월</span>
+          </h1>
+          <!-- KB국민은행은 제안 단계의 시안이었다. 협업이 확정된 지금은 주체 둘을 세우고,
+               발주처인 사랑의열매를 왼쪽에 둔다. -->
+          <div class="cover-brands">
+            <img src="assets/logo/logo_2.png" alt="사랑의열매" />
+            <span>×</span>
+            <img src="assets/logo/logo_1.png" alt="airpass" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · 개발 원칙 (아이스브레이킹)
+         두 안건 모두 「지금 정한다」로 수렴하는데, 이유를 먼저 깔아 두지 않으면 재촉으로만
+         들린다. 원칙 이름을 화면 한가운데 크게 세우고 근거는 아래로 내린다 —
+         카드 세 장으로 늘어놓으면 원칙이 아니라 목록으로 읽힌다. -->
+    <section class="slide slide--doc" id="yagni">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <div class="doc-eyebrow">
+            <span class="secnum">개발 원칙</span>
+          </div>
+          <h2 class="headline--h2">쓰지 않을 기능은 <span class="accent">만들지 않습니다</span></h2>
+          <p class="subcopy" data-rise="2">소프트웨어 개발에는 <strong>「필요해지기 전에는 만들지 않는다」</strong>는 <strong>YAGNI 원칙</strong>이 있습니다.</p>
+        </header>
+        <div class="doc-body">
+
+          <div class="yg-mark" data-rise="3">
+            <b>YAGNI</b>
+            <span>You Aren&rsquo;t Gonna Need It</span>
+          </div>
+
+          <div class="yg-3" data-rise="4">
+            <div>
+              <em>01</em>
+              <b>필요한 것만 구현</b>
+              <span>「있으면 좋을 것 같아서」 넣은 기능은 대부분 쓰이지 않습니다. 만든 뒤에는 <b>쓰지 않아도 계속 관리해야</b> 합니다.</span>
+            </div>
+            <div>
+              <em>02</em>
+              <b>복잡성 감소</b>
+              <span>기능이 하나 늘면 <b>조합만큼 경우의 수가 늘어납니다.</b> 현장에서 어긋날 지점도 그만큼 늘어납니다.</span>
+            </div>
+            <div>
+              <em>03</em>
+              <b>유지보수 향상</b>
+              <span>화면이 단순할수록 <b>담당자가 익히기 쉽습니다.</b> 없는 기능은 고장 나지도 않습니다.</span>
+            </div>
+          </div>
+
+          <p class="yg-end" data-rise="5">그래서 구축에 들어가기 전에 <b>무엇이 실제로 필요한지</b>를 먼저 여쭙습니다 — 오늘 정하는 만큼만 만들고, 정한 것은 제대로 만듭니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · 두 안건 요약
+         순서가 곧 의존 관계다. 나눔이벤트 씬이 먼저 서야 그 앞뒤를 무엇으로 채울지가
+         정해진다. 둘 다 「지금 정한다」로 수렴하되 이유가 다르다는 것이 요지다. -->
+    <section class="slide slide--doc" id="agenda">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <div class="doc-eyebrow">
+            <span class="secnum">오늘의 안건</span>
+            <span class="tier tier--base">두 가지</span>
+          </div>
+          <h2 class="headline--h2">순서가 있습니다 — <span class="accent">나눔이벤트가 먼저입니다</span></h2>
+          <p class="subcopy" data-rise="2">나눔이벤트 씬이 서야 <strong>그 앞뒤를 무엇으로 채울지</strong>가 정해집니다. 큐 관리 시스템은 그 위에 얹히는 운영 도구입니다.</p>
+        </header>
+        <div class="doc-body">
+          <div class="mt-two" data-rise="3">
+
+            <div class="mt-card">
+              <span class="mt-card__k">안건 1</span>
+              <h3>나눔이벤트 <em>도미노 연출</em>을<br />확정해 주십시오</h3>
+              <ul class="list">
+                <li>「도미노 컨셉」이라는 <b>방향만 전달받았고</b> 구체적인 연출은 듣지 못했습니다.</li>
+                <li>영상 제작이 아니라 <b>씬을 통째로 만드는 공수</b>입니다. 나중에 바꾸면 수정이 아니라 재개발입니다.</li>
+                <li>이 씬이 <b>전달식 전체 화면의 기준</b>이 되므로 가장 먼저 정해져야 합니다.</li>
+              </ul>
+              <div class="mt-flag mt-flag--hard">확정 전에는 <b>착수할 수 없습니다</b></div>
+            </div>
+
+            <div class="mt-card">
+              <span class="mt-card__k">안건 2</span>
+              <h3>큐 관리 시스템에<br /><em>어떤 기능이 필요한지</em> 의뢰해 주십시오</h3>
+              <ul class="list">
+                <li>나눔이벤트는 전달식의 <b>한 구간</b>입니다. 그 앞뒤로 입장 · 내빈 소개 · 인사말씀 · 성금 전달 · 폐회가 이어집니다.</li>
+                <li><b>행사 전반의 화면을 상황별로 설정</b>하는 것이 이 시스템입니다.</li>
+                <li>큐시트 가안은 <b>귀사가 주신 사회자 시나리오에 의거해</b> 구성했습니다.</li>
+              </ul>
+              <div class="mt-flag mt-flag--warn">짐작으로 만들면 <b>쓰지 않을 기능이 남습니다</b></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="foot-note">※ 이미 보내드린 제안 자료(<b>sarang-interactive-ceremony-kinect.netlify.app</b>)를 함께 띄워 설명드립니다. 이 자료는 그중 <b>두 안건에 해당하는 부분만</b> 추려 온 것입니다.</div>
+    </section>
+
+    <!-- 04 · 안건 1 · 나눔이벤트
+         경위(컨셉 이력)와 이유(왜 지금)를 한 장에 둔다. 위에서 사실을 나열하고
+         아래에서 그래서 왜 지금인지를 받는 순서다. -->
+    <section class="slide slide--doc" id="ev">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <div class="doc-eyebrow">
+            <span class="secnum">안건 1 · 나눔이벤트</span>
+            <span class="tier tier--custom">추가 개발 필요</span>
+            <span class="tier tier--cost">개발 비용 별도</span>
+          </div>
+          <h2 class="headline--h2">컨셉은 두 번 바뀌었고, <span class="accent">세 번째는 아직 비어 있습니다</span></h2>
+        </header>
+        <div class="doc-body">
+          <div class="mt-line" data-rise="2">
+            <div class="mt-step">
+              <span class="mt-step__img"><img src="assets/led/snowball.jpg" alt="스노우볼 점등식" draggable="false" /></span>
+              <span class="mt-step__n">1차 · 원안</span>
+              <span class="mt-step__t">사랑의 온도탑 스노우볼 점등식</span>
+              <span class="mt-step__s">귀사 사회자 시나리오에 적힌 원안입니다. 로고를 모형에 넣으면 스노우볼 안 마을에 빛이 퍼지는 구성.</span>
+            </div>
+            <div class="mt-step">
+              <span class="mt-step__img"><img src="assets/led/hands.jpg" alt="맞닿은 두 손" draggable="false" /></span>
+              <span class="mt-step__n">2차 · 당사 제안</span>
+              <span class="mt-step__t">함께 완성하는 사랑의열매</span>
+              <span class="mt-step__s">두 대표자가 마주 서고 맞닿은 손끝에서 열매가 피어나는 구성. 완성된 영상이 아니라 <b>실시간으로 도는 3D 씬</b>으로 여기까지 구축해 왔습니다.</span>
+            </div>
+            <div class="mt-step mt-step--now">
+              <span class="mt-step__img mt-step__img--q" aria-hidden="true"><i>?</i></span>
+              <span class="mt-step__n">3차 · 변경 예정</span>
+              <span class="mt-step__t">도미노 컨셉 — 연출 미정</span>
+              <span class="mt-step__s">「도미노」라는 방향만 전달받았습니다. 컨셉이 바뀌면 화면만 바뀌는 것이 아니라 <b>씬구축 · 라이팅 · VFX · 센서 판정까지 다시 설계</b>됩니다 — 수정이 아니라 재개발입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-note">※ <b>기획 확정 → 씬 구축 → 센서 연동 → 현장 검수</b> 순서입니다. 앞이 밀리면 뒤가 전부 밀립니다 — 연말 일정에 완성도를 맞추려면 <b>구축 기간이 온전히 확보되어야</b> 합니다.</div>
+    </section>
+
+    <!-- 05 · 안건 2 · 큐 관리 시스템
+         근거(시나리오 대조)와 현재 가안(콘솔 실물)을 한 장에 둔다. 말로 하면
+         「화면을 순서대로 넘긴다」로 들리는데, 눌러 보면 큐마다 화면 · 멘트 · 신호가
+         한 벌로 붙어 있다는 것이 바로 보인다. -->
+    <section class="slide slide--doc" id="cue">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <div class="doc-eyebrow">
+            <span class="secnum">안건 2 · 큐 관리 시스템</span>
+            <span class="tier tier--custom">추가 개발 필요</span>
+          </div>
+          <h2 class="headline--h2">큐시트는 <span class="accent">귀사 시나리오를 그대로 옮긴 것</span>입니다</h2>
+          <p class="subcopy" data-rise="2">임의로 만든 구성이 아닙니다. 구간 · 순서는 물론 대괄호로 적힌 <strong>조명 · 음향 신호까지</strong> 그대로 큐에 붙였습니다. <strong>콘솔을 클릭</strong>하시면 방향키로 직접 넘겨 보실 수 있습니다.</p>
+        </header>
+        <div class="doc-body">
+          <div class="mt-cuelay" data-rise="3">
+
+            <div class="cue-console" tabindex="0" data-no-advance aria-label="큐 콘솔 데모 · 클릭 후 방향키로 조작">
+              <div class="cue-list" role="listbox" aria-label="큐 목록"></div>
+              <div class="cue-stage">
+                <div class="cue-screen" role="button" tabindex="-1" data-gallery="cue" data-index="0" aria-label="현재 큐 화면 크게 보기">
+                  <div class="cue-mock">
+                    <img class="cue-still" alt="" />
+                    <span class="cue-pending">생성 예정 화면</span>
+                    <img class="cue-frame" src="assets/mockup/mockup10.png" alt="현장 LED 월" />
+                  </div>
+                  <span class="cue-ment"><b>사회자</b><span class="cue-ment__t"></span></span>
+                  <span class="cue-badge">LIVE</span>
+                </div>
+                <div class="cue-bar">
+                  <button class="cue-btn" type="button" data-cue-prev data-no-advance aria-label="이전 큐">‹</button>
+                  <div class="cue-meta">
+                    <span class="cue-no">CUE 01</span>
+                    <span class="cue-title">입장</span>
+                    <span class="cue-next">NEXT · 내빈 소개</span>
+                  </div>
+                  <button class="cue-btn" type="button" data-cue-next data-no-advance aria-label="다음 큐">›</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-side">
+              <table class="mt-tbl">
+                <thead>
+                  <tr><th>시나리오 구간</th><th>큐</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>입장</td><td class="cue">1-1</td></tr>
+                  <tr><td>내빈소개</td><td class="cue">1-2</td></tr>
+                  <tr><td>영상 상영</td><td class="cue">1-3</td></tr>
+                  <tr class="is-ask"><td>인사·감사말씀 <b>+</b> 감사인사<span class="mt-ask">의뢰</span></td><td class="cue">1-4</td></tr>
+                  <tr><td>나눔이벤트</td><td class="cue">2-1 ~ 2-4</td></tr>
+                  <tr class="is-ask"><td>성금 전달 <b>+</b> 인증패 전달<span class="mt-ask">의뢰</span></td><td class="cue">3-1</td></tr>
+                  <tr><td>폐회</td><td class="cue">3-2</td></tr>
+                </tbody>
+              </table>
+
+              <div class="mt-alt">
+                <span class="mt-alt__k">시나리오 4페이지</span>
+                <p class="mt-alt__t">※ 인증패 전달 <b>(인증패 있는 경우에만 사용)</b><br />— 행사마다 있고 없는 구간이 <b>이미 존재합니다.</b></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="foot-note">※ 데모 UI입니다. 실제 구축 시에는 페이드 전환 · 블랙아웃 · 비상 복귀 · 사전 프리뷰(Preview→Program) 기능을 포함합니다. <b>폐회 큐에서는 기본 콘텐츠 6종 중 무엇을 띄울지 고를 수 있습니다.</b></div>
+    </section>
+
+    <!-- 06 · 총정리 — 오늘 정해 주셔야 할 것
+         마지막 장은 질문만 남긴다. 회의를 마치며 이 한 장만 보면 무엇을 답해야 하는지
+         전부 보이도록. 아래 두 박스는 결정 항목이 아니라 우리 의견과 절차 확인이다. -->
+    <section class="slide slide--doc" id="ask">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <div class="doc-eyebrow">
+            <span class="secnum">총정리</span>
+            <span class="tier tier--cost">오늘 결정 요청</span>
+          </div>
+          <h2 class="headline--h2">오늘 <span class="accent">정해 주셔야 할 것</span></h2>
+          <p class="subcopy" data-rise="2">왼쪽은 <strong>정해지지 않으면 착수할 수 없는 것</strong>, 오른쪽은 <strong>실제로 쓰실 것만 골라 주시면 되는 것</strong>입니다.</p>
+        </header>
+        <div class="doc-body">
+          <div class="mt-qlay" data-rise="3">
+
+            <div class="mt-qcol">
+              <span class="mt-qcol__k mt-qcol__k--hard">안건 1 · 나눔이벤트 도미노 연출</span>
+              <div class="mt-qs">
+                <div class="mt-q"><b>1</b><span>무대에 <b>실물 오브젝트</b>가 함께 놓입니까?<em>원안(스노우볼)처럼 모형을 두는 방식인지 — LED 화면 안에서만 연출하시기를 권장드립니다</em></span></div>
+                <div class="mt-q"><b>2</b><span>도미노는 <b>무엇으로</b> 되어 있습니까?<em>기업 로고 / 사랑의열매 / 나눔 사례 / 추상 조형</em></span></div>
+                <div class="mt-q"><b>3</b><span><b>무엇이</b> 도미노를 쓰러뜨립니까?<em>대표자의 동작인지, 무대에 놓인 오브젝트인지 — 무엇이 트리거가 되느냐에 따라 센서 구성이 달라집니다</em></span></div>
+                <div class="mt-q"><b>4</b><span>다 쓰러진 끝에 <b>무엇이 완성</b>됩니까?<em>마지막 한 장면이 전달식 전체의 배경 화면으로 이어집니다</em></span></div>
+                <div class="mt-q"><b>5</b><span><b>대표자</b>는 몇 분이 어떻게 참여합니까?<em>인원 · 서는 위치 · 동작 — 무대 동선이 정해져야 센서를 잡습니다</em></span></div>
+              </div>
+            </div>
+
+            <div class="mt-qcol">
+              <span class="mt-qcol__k mt-qcol__k--warn">안건 2 · 큐 관리 시스템</span>
+              <div class="mt-qs">
+                <div class="mt-q"><b>1</b><span>행사마다 큐를 <b>더하고 빼야</b> 합니까?<em>11/1 A행사는 가안대로, 11/2 B행사는 일부 제외 — 「인증패 있는 경우에만」이 실제 사례입니다</em></span></div>
+                <div class="mt-q"><b>2</b><span>행사별 구성을 <b>저장해 두고 불러와야</b> 합니까?<em>매번 새로 짜는 방식과, 저장해 두고 골라 쓰는 방식이 있습니다</em></span></div>
+                <div class="mt-q"><b>3</b><span>묶은 두 큐(<b>1-4 · 3-1</b>)는 쪼갤까요?<em>진행이 끊기는 지점이 어디인지에 따라 정해집니다</em></span></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-pair" data-rise="4">
+            <div class="mt-alt">
+              <span class="mt-alt__k">권장 · LED 단독 연출</span>
+              <p class="mt-alt__t">실물 오브젝트는 제작 · 운송 · 설치 · 리허설이 별도로 붙고 현장에서 어긋나면 되돌릴 수 없지만, 화면 안 연출은 <b>센서 판정과 한 시스템에 묶여 있어 운영자가 넘길 수 있고</b> 기업이 바뀌어도 <b>같은 씬을 그대로 재사용</b>합니다.</p>
+            </div>
+            <div class="mt-alt">
+              <span class="mt-alt__k">진행 방식 — 이대로 가도 되겠습니까?</span>
+              <p class="mt-alt__t">기획안을 주시면 <b>지난 「함께 완성하는 사랑의열매」 때와 같이</b> 저희가 먼저 <b>시안 자료를 만들어 확인받고</b>, 확인된 그 자료대로 구축합니다 — <b>기획 확정 → 시안 → 컨펌 → 구축</b>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class="nav-arrow nav-arrow--prev" id="navPrev" type="button" aria-label="이전 슬라이드" data-no-advance>
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 5 8 12 15 19"></polyline></svg>
+    </button>
+    <button class="nav-arrow nav-arrow--next" id="navNext" type="button" aria-label="다음 슬라이드" data-no-advance>
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"></polyline></svg>
+    </button>
+
+    <div id="hud">
+      <button id="hud-home" type="button" aria-label="처음으로" data-no-advance><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg></button>
+      <span id="hud-section">표지</span>
+      <span id="hud-index"><input id="hud-input" type="text" inputmode="numeric" maxlength="2" value="01" aria-label="슬라이드 번호 입력" data-no-advance /> / <span id="hud-total">06</span></span>
+      <span class="bar"><i></i></span>
+    </div>
+
+    <!-- 라이트박스 · 화면 확대 -->
+    <div id="lightbox" data-no-advance>
+      <div id="lb-body">
+        <div id="lb-stage">
+          <div id="lb-media"></div>
+          <button class="lb-nav" id="lb-prev" type="button" data-no-advance aria-label="이전">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 5 8 12 15 19"></polyline></svg>
+          </button>
+          <button class="lb-nav" id="lb-next" type="button" data-no-advance aria-label="다음">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"></polyline></svg>
+          </button>
+        </div>
+        <div id="lb-meta" class="film-ctrl lb-ctrl" data-no-advance>
+          <div id="lb-cap"><span id="lb-cap-1"></span><span id="lb-cap-2"></span></div>
+          <div class="film-row">
+            <span class="film-count" id="lb-count">1 / 1</span>
+          </div>
+          <div class="film-prog"><span class="bar"><i id="lb-fill"></i></span></div>
+        </div>
+      </div>
+      <button id="lb-back" type="button" data-no-advance aria-label="돌아가기">돌아가기</button>
+    </div>
+
+  </div>
+
+  <script src="js/cue-console.js"></script>
+  <script src="js/deck.js"></script>
+</body>
+</html>

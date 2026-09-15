@@ -1,0 +1,21 @@
+# Netlify — 빌드 없는 정적 자료.
+# 이 저장소는 자료 자체가 루트이므로 publish 가 "." 이다.
+[build]
+  publish = "."
+
+# 썸네일 · 포스터는 같은 파일명으로 교체된다. 오래 캐싱하면 옛 이미지가 남는다.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# 좌표·문구 수정이 잦은 파일들 — 매번 재검증시킨다.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
